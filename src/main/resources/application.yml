@@ -1,0 +1,16 @@
+spring.jpa.hibernate.naming:
+  implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+  physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+spring:
+  profiles.active: dev
+
+  #Mysql
+  datasource:
+    url: "jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:rendicontazione}"
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PWD:root}
+    hikari.minimum-idle: 1
+    hikari.maximum-pool-size: 1
+
+  jpa.hibernate.use-new-id-generator-mappings: false
