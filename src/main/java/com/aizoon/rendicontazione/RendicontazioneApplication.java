@@ -8,5 +8,4 @@ public class RendicontazioneApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RendicontazioneApplication.class, args);
 	}
-
 }
