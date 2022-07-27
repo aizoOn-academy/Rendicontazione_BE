@@ -11,8 +11,7 @@ import lombok.Setter;
 @Getter @Setter
 public class AnnouncementResponse extends AbstractDTO<AnnouncementResponse, Announcement> {
 
-    private Long announcementID;
-
+    private Long announcementId;
     private String code;
     private String title;
     private String description;

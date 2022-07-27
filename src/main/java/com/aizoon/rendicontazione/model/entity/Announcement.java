@@ -1,19 +1,21 @@
 package com.aizoon.rendicontazione.model.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Getter @Setter
-@Entity @Table(name = "Announcements")
+@Table(name = "RE_Announcements")
 public class Announcement {
-    
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id @Column(name = "announcement_id", nullable = false)
-    private Long announcementID;
+
+    @Id
+    @Column(name = "announcement_id", nullable = false)
+    private Long announcementId;
 
     @Column(name = "code", nullable = false)
     private String code;
@@ -30,8 +32,6 @@ public class Announcement {
     @Column(name = "end_date", nullable = false)
     private LocalDate endDate;
 
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "request_id")
-    private Request request;
+    @OneToMany
+    private List<AnnouncementApplication> announcementApplications;
 }

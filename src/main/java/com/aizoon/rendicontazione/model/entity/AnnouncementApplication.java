@@ -6,21 +6,17 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
-@Table(name = "RE_Request")
-public class Request {
+@Getter @Setter
+@Table(name = "RE_AnnouncementApplications")
+public class AnnouncementApplication {
     @Id
-    @Column(name = "request_id", nullable = false)
-    private Long id;
+    @Column(name = "announcement_application_id", nullable = false)
+    private Long announcementApplicationId;
 
-    @ManyToOne
-    @MapsId
-    @JoinColumn(name="operator_id", nullable=false)
+    @ManyToOne @JoinColumn(name = "operator_id")
     private Operator operator;
 
-    @OneToOne(mappedBy = "request")
-    @PrimaryKeyJoinColumn
+    @ManyToOne @JoinColumn(name = "announcement_id")
     private Announcement announcement;
 
     @Column(name = "applicant_fiscal_code", nullable = false)
@@ -51,14 +47,13 @@ public class Request {
     private String applicantIban;
 
     @Column(name = "money_amount", nullable = false)
-    private double moneyAmount;
+    private Double moneyAmount;
+
+    @Column(name = "approved_money_amount", nullable = true)
+    private Double approvedMoneyAmount;
 
     @Column(name = "note", nullable = false)
     private String note;
-
-
-    @Column(name = "money_amount_final", nullable = false)
-    private Double moneyAmountFinale;
 
     @Column(name = "approvation_status", nullable = false)
     private Boolean approvationStatus;
