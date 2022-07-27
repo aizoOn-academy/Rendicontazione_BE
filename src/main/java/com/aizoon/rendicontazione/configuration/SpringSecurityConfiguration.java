@@ -44,6 +44,7 @@ public class SpringSecurityConfiguration {
             AntPathRequestMatcher logoutMatcher = new AntPathRequestMatcher("/api/logout", "POST");
             
             customizer.logoutRequestMatcher(logoutMatcher);
+            customizer.deleteCookies("JSESSIONID");
             customizer.defaultLogoutSuccessHandlerFor(new HttpStatusReturningLogoutSuccessHandler(), logoutMatcher);
         });
 
