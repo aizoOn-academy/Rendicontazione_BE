@@ -15,23 +15,30 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/applications")
 public class AnnouncementApplicationsController {
-    private final AnnouncementApplicationService requestService;
+    private final AnnouncementApplicationService applicationService;
 
     public AnnouncementApplicationsController(AnnouncementApplicationService requestService) {
-        this.requestService = requestService;
+        this.applicationService = requestService;
     }
 
     @GetMapping
     public ResponseEntity<List<AnnouncementApplicationResponse>> findApplications() {
         return ResponseEntity.ok(
-            requestService.findApplications()
+            applicationService.findApplications()
+        );
+    }
+
+    @GetMapping(params = "announcement_id")
+    public ResponseEntity<List<AnnouncementApplicationResponse>> findApplicationsByAnnouncementID(@RequestParam("announcement_id") Long announcementID) {
+        return ResponseEntity.ok(
+            applicationService.findApplicationsByAnnouncementID(announcementID)
         );
     }
 
     @PatchMapping("/{id}")
     public ResponseEntity<AnnouncementApplicationResponse> updateApplication(@RequestBody @Valid AnnouncementApplicationRequest request, @PathVariable("id") Long id) {
         return ResponseEntity.ok(
-            requestService.patchApplication(request, id)
+            applicationService.patchApplication(request, id)
         );
     }
 

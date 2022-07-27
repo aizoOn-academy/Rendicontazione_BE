@@ -13,20 +13,26 @@ import java.util.List;
 @Service
 public class AnnouncementApplicationService {
 
-    private final AnnouncementApplicationRepository requestRepository;
+    private final AnnouncementApplicationRepository applicationsRepository;
 
     public AnnouncementApplicationService(AnnouncementApplicationRepository requestRepository) {
-        this.requestRepository = requestRepository;
+        this.applicationsRepository = requestRepository;
     }
 
     public List<AnnouncementApplicationResponse> findApplications() {
-        return requestRepository.findAll().stream()
+        return applicationsRepository.findAll().stream()
+                .map(application -> new AnnouncementApplicationResponse().from(application))
+                .toList();
+    }
+
+    public List<AnnouncementApplicationResponse> findApplicationsByAnnouncementID(Long announcementID) {
+        return applicationsRepository.findByAnnouncementID(announcementID).stream()
                 .map(application -> new AnnouncementApplicationResponse().from(application))
                 .toList();
     }
 
     public AnnouncementApplicationResponse patchApplication(AnnouncementApplicationRequest request, Long id) throws ResourceNotFoundException {
-        AnnouncementApplication application = requestRepository.findById(id)
+        AnnouncementApplication application = applicationsRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Can't find announcement application with id: " + id));
 
         
@@ -44,8 +50,8 @@ public class AnnouncementApplicationService {
 
         application.setApprovationStatus( isApproved );
 
-        requestRepository.save(application);
-        return new AnnouncementApplicationResponse().from(requestRepository.save(application));
+        applicationsRepository.save(application);
+        return new AnnouncementApplicationResponse().from(applicationsRepository.save(application));
     }
 
 }
