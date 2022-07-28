@@ -39,21 +39,21 @@ VALUES
     'IT60X0438211051000000123417','allenatore che vuole iscrivere la squadra al torneo'
 ),
 (
-    '5','1','3',
+    '6','1','3',
     'TNXCMN00A41L736H','Clementine','Autain','Rue larochelle 278',
     '21025','Nice','France',
     '5570543101','40000',
     'FR60X0438211051000000773499','donna imprenditore nella moda richiede sostegno'
 ),
 (
-    '6','1','4',
+    '7','1','4',
     'GRNMTN98E41L424I','Martina','Guarnuto','corso francia 315',
     '21030','Torino','Italia',
     '3370520101','15000',
     'IT60X0438211051000000773499','studentessa che postula per il bando erasmus'
 ),
 (
-    '7','1','4',
+    '8','1','4',
     'NMMMKS96P10A326I','Markus','Neumann','Guerd-Müller-Straße 55',
     '10030','München','Deutschland',
     '5570630102','15000',
