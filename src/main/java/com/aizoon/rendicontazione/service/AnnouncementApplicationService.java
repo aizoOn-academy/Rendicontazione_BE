@@ -1,14 +1,14 @@
 package com.aizoon.rendicontazione.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.aizoon.rendicontazione.error.exceptions.ResourceNotFoundException;
 import com.aizoon.rendicontazione.model.dto.request.AnnouncementApplicationRequest;
 import com.aizoon.rendicontazione.model.dto.response.AnnouncementApplicationResponse;
 import com.aizoon.rendicontazione.model.entity.AnnouncementApplication;
 import com.aizoon.rendicontazione.repository.AnnouncementApplicationRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-
-import java.util.List;
 
 @Service
 public class AnnouncementApplicationService {
