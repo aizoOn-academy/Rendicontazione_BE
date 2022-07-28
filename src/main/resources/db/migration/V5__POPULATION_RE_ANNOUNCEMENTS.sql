@@ -23,4 +23,12 @@ VALUES
     'Announcement for business support',
     '2022-09-01',
     '2022-09-30'
+),
+(
+    '4',
+    'ANC4',
+    'Erasmus Support Announcement',
+    'European scholarship for exchange program',
+    '2022-11-01',
+    '2022-11-25'
 );
