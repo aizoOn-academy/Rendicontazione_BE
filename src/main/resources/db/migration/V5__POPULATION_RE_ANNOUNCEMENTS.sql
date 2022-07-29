@@ -1,34 +1,5 @@
-INSERT INTO RE_Announcements(announcement_id,code,title,description,start_date,end_date)
-VALUES
-(
-    '1',
-    'ANC1',
-    'Football Announcement',
-    'Announcement for football tournament',
-    '2022-07-28',
-    '2022-08-15'
-),
-(
-    '2',
-    'ANC2',
-    'Social Announcement',
-    'Announcement for social support',
-    '2022-08-01',
-    '2022-08-30'
-),
-(
-    '3',
-    'ANC3',
-    'Support business Announcement',
-    'Announcement for business support',
-    '2022-09-01',
-    '2022-09-30'
-),
-(
-    '4',
-    'ANC4',
-    'Erasmus Support Announcement',
-    'European scholarship for exchange program',
-    '2022-11-01',
-    '2022-11-25'
-);
+INSERT INTO RE_Announcements(code,title,description,start_date,end_date) VALUES ("ABCS1", "TEST1", "test 123","2022-12-15","2024-12-15");
+INSERT INTO RE_Announcements(code,title,description,start_date,end_date) VALUES ("ABCS3", "TEST2", "test 123","2022-03-15","2022-12-15");
+INSERT INTO RE_Announcements(code,title,description,start_date,end_date) VALUES ("ABCS5", "TEST3", "test 123","2022-06-15","2021-05-11");
+INSERT INTO RE_Announcements(code,title,description,start_date,end_date) VALUES ("ABCS6", "TEST4", "test 123","2022-05-15","2023-05-14");
+INSERT INTO RE_Announcements(code,title,description,start_date,end_date) VALUES ("ABCS9", "TEST5", "test 123","2022-01-15","2027-11-18");

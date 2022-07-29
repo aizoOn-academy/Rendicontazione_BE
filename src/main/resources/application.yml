@@ -9,7 +9,7 @@ spring:
 
   #Mysql
   datasource:
-    url: "jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:rendicontazione}"
+    url: "jdbc:mysql://${MYSQL_HOST:10.244.244.146}:${MYSQL_PORT:3312}/${MYSQL_DATABASE:rendicontazione}"
     username: ${MYSQL_USER:root}
     password: ${MYSQL_PWD:root}
     hikari.minimum-idle: 1

@@ -1,5 +1,5 @@
 CREATE TABLE RE_Announcements (
-    announcement_id BIGINT,
+    announcement_id BIGINT auto_increment,
     code VARCHAR(32) NOT NULL,
     title VARCHAR(30) NOT NULL,
     description TEXT NOT NULL,
